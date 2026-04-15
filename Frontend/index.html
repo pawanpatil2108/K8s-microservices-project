@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>K8s Microservices App</title>
+  <style>
+    body {
+      background: black;
+      font-family: Arial;
+      color: gold;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .card {
+      border: 2px solid gold;
+      padding: 30px;
+      border-radius: 15px;
+      width: 400px;
+      text-align: center;
+    }
+    button {
+      background: gold;
+      color: black;
+      padding: 10px;
+      border: none;
+      margin: 15px;
+      cursor: pointer;
+    }
+    .box {
+      border: 1px solid gold;
+      margin: 10px;
+      padding: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="card">
+     <h2>🚀 K8s Microservices App</h2>
+
+    <button onclick="getData()">Explore Products</button>
+
+    <div class="box">Database: MongoDB (StatefulSet)</div>
+    <div class="box">Autoscaling: HPA (Backend)</div>
+    <div class="box">Services: User, Product, Backend</div>
+  </div>
+
+<script>
+function getData(){
+  fetch('/api/users')
+    .then(res => res.json())
+    .then(data => alert(JSON.stringify(data)));
+}
+</script>
+
+</body>
+</html>
